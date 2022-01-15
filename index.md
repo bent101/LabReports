@@ -4,7 +4,7 @@
 
 **VS Code** is a popular text editor by Microsoft that people use to write code. To use it, go to their [website](https://code.visualstudio.com/),  download the latest version, and open the app. It should look like this if you've never used it before.
 ![vscode.png](vscode.png)
-Now, go to Terminal -> New Terminal. You will usually do this after opening VS Code.
+Now, go to Terminal -> New Terminal. You will almost always do this after opening VS Code.
 
 ## Remotely Connecting
 
@@ -36,7 +36,7 @@ class WhereAmI {
   }
 }
 ```
-Now, you will use `scp` to send `WhereAmI.java` to ieng6. `scp` stands for "Secure, Contain, Protect" and is used for transferring files. Make sure your working directory is the folder containing `WhereAmI.java`, and run the following command. Replace `???` with your three letters.
+Now, you will use `scp` to send `WhereAmI.java` to ieng6. `scp` stands for "Secure, Contain, Protect" and is used for transferring files. Make sure your working directory is the folder containing `WhereAmI.java`, and run the following command. Replace "`???`" with your three letters.
 ```
 scp WhereAmI.java cs15lwi22???@ieng6.ucsd.edu:~/
 ```
@@ -47,8 +47,33 @@ You might notice I wasn't asked for my password, while you probably were. That i
 
 ## Setting an SSH Key
 
+First run the `ssh-keygen` command (still logged out of the server) and follow the steps. Now, you have a private key and a public key in your `.ssh` folder. To use the keys to log into ieng, you will make a `.ssh` folder in your account on the server, and you will `scp` the **public key** into that folder. To do this, run the following commands. Replace "`???`" with your three letters and "`[your name]`" with your username on your PC/laptop.
 
+```
+ssh cs15lwi22???@ieng6.ucsd.edu
+mkdir .ssh
+exit
+scp /Users/[your name]/ssh/id_rsa.pub cs15lwi22@ieng6.ucsd.edu:~/.ssh/authorized_keys
+```
+
+Now, you should be able to log in without entering a password, as seen below.
+![no-password.png](no-password.png)
 
 ## Optimizing Remote Running
 
+You've learned how to log in, log out, and send files to servers. Now, you will learn some shortcuts to make things easier and faster.
 
+- Instead of logging in, running a command, and logging out, use this shortcut. Log in with `ssh` as usual, then at the end of that command, add a command in quotes. For example, the following command would log in, run `ls`, and log out.
+```
+ssh cs15lwi22???@ieng6.ucsd.edu "ls"
+```
+- To run multiple commands on the same line, separate them with semicolons. This is useful because you can use the **up arrow** to get the last command you ran. Therefore, instead of typing ``javac Class.java`` and ``java Class`` every time, you can type ``javac Class.java ; java Class`` just one time, and keep using up arrow to repeat it.
+
+- To update a file you have in your account on the server, simply `scp` the file again, and it will overwrite. To update a file and run it all on the server, you could use this one command:
+
+```
+scp Class.java cs15lwi22???@ieng6.ucsd.edu:~/ ; ssh cs15lwi22???@ieng6.ucsd.edu "javac Class.java ; java Class"
+```
+
+Here's a screenshot of that command at work.
+![running.png](running.png)
