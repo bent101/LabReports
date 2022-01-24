@@ -77,3 +77,5 @@ scp Class.java cs15lwi22???@ieng6.ucsd.edu:~/ ; ssh cs15lwi22???@ieng6.ucsd.edu 
 
 Here's a screenshot of that command at work.
 ![running.png](running.png)
+
+Typing out all of these commands one at a time would be painstakingly slow; it would take around 100 keystrokes. Using the up arrow to run the same four commands repeatedly would take 4 * (4 up arrows + enter) = 20 keystrokes. Finally, using this one command and pressing up arrow + enter takes only two keystrokes, making it the fastest way to compile and run a Java program on a server.
