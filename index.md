@@ -6,7 +6,7 @@
 ### Symptom
 ![symptom 1](lab-report-2/symptom-1.png)
 ### Output after the fix
-![fix 1]lab-report-2/(fix-1.png)
+![fix 1](lab-report-2/fix-1.png)
 
 The symptom here is an infinite loop that causes an `OutOfMemoryError`. The bug was a failure to acknowledge input with text after the links, as in [`test-file2`](https://github.com/bent101/markdown-parse/blob/main/test-file2.md). To work around the text, I tested whether or not there were any more opening brackets in the file. If not, I broke out of the `while` loop.
 
