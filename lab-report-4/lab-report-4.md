@@ -1,4 +1,4 @@
-# Lab Report 6
+# Lab Report 4
 
 I'll be testing [my repository](https://github.com/bent101/markdown-parse) and [Tyler's repository](https://github.com/tylercyang/markdown-parse) against three markdown snippets. To get an expected output, I'll use VSCode's markdown preview.
 
