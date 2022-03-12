@@ -1,8 +1,8 @@
-# Lab Report 5
+#Lab Report 5
 
 First, I used `diff` to compare the two different `results.txt` files that correspond to my implementation and Prof. Politz's implementation. There were around a dozen differences between my `results.txt` and his `results.txt`.
 
-## First difference
+##First difference
 
 The first difference I looked at was this one.
 
@@ -16,7 +16,7 @@ Prof. Politz's implementation recognized a link with the address `baz`, while mi
 
 ![201.png](201.png)
  
- ## Second difference
+ ##Second difference
 
  The second difference I looked at was this one.
 
